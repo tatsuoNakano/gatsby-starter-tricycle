@@ -4,7 +4,10 @@
 module.exports = {
   siteMetadata: {
     title: `gatsby-starter-tricycle`,
-    siteUrl: `https://www.yourdomain.tld`
+    description: `Example project for the Gatsby Head API`,
+    twitterUsername: `@gatsbyjs`,
+    image: `/gatsby-icon.png`,
+    siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
       "gatsby-plugin-image",

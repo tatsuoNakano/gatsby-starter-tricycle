@@ -4,6 +4,8 @@ import Header from "./header";
 import Footer from "./Footer";
 import OneColumn from "./one-column";
 import ThreeColumn from "./three-column";
+import {Seo} from "../function/seo";
+
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -35,3 +37,5 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
+
+

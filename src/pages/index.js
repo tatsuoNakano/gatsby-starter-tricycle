@@ -1,8 +1,7 @@
 // Step 1: Import React
 import * as React from 'react'
 import Layout from '../component/layout/layout'
-import Seo from '../component/function/seo'
-
+import { Seo } from "../component/function/seo"
 
 // Step 2: Define your component
 const IndexPage = () => {
@@ -16,7 +15,11 @@ const IndexPage = () => {
 }
 
 // You'll learn about this in the next task, just copy it for now
-export const Head = () => <Seo title="Home Page" />
+
 
 // Step 3: Export your component
 export default IndexPage
+
+export const Head = () => (
+    <Seo />
+)

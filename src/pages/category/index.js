@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from '../../component/layout/layout'
+import {Seo} from "../../component/function/seo";
 const CategoryList = ({ data }) => {
     const { categories } = data.allMdx
     return (
@@ -30,3 +31,7 @@ export const pageQuery = graphql`
         }
     }
 `
+
+export const Head = () => (
+    <Seo />
+)
