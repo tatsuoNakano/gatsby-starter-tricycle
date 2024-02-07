@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import OneColumn from "./one-column";
 import ThreeColumn from "./three-column";
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
         query {
             site {
