@@ -19,7 +19,8 @@ const Layout = ({ pageTitle, children }) => {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/post">post</Link></li>
-                    <li><Link to="/fix">fix</Link></li>
+                    <li><Link to="/category">category</Link></li>
+                    <li><Link to="/tags">tags</Link></li>
                 </ul>
             </nav>
             <main>
