@@ -5,12 +5,12 @@ import Seo from '../../component/function/seo'
 
 const PostPage = ({ data }) => {
     return (
-        <Layout pageTitle="My Blog Posts">
+        <Layout pageTitle="My  Posts">
             {
                 data.allMdx.nodes.map(node => (
                     <article key={node.id}>
                         <h2>
-                            <Link to={`/blog/${node.frontmatter.slug}`}>
+                            <Link to={`/fix/${node.frontmatter.slug}`}>
                                 {node.frontmatter.title}
                             </Link>
                         </h2>
