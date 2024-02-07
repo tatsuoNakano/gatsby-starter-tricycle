@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
                 <Link to="/category/">カテゴリーリンク</Link>
                 <Link to="/post/">投稿リンク</Link>
                 <Link to="/">トップ</Link>
+                <Link to="/tags/">タグ</Link>
             </div>
         <ThreeColumn/>
     </div>

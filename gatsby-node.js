@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const categoryTemplate = path.resolve("src/templates/category.js")
 
+
     const result = await graphql(`
         {
             categoryGroup: allMdx {
