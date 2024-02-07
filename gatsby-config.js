@@ -23,13 +23,6 @@ module.exports = {
         path: `${__dirname}/post`,
       }
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `fix`,
-        path: `${__dirname}/fix`,
-      }
-    },
     "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
