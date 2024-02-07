@@ -19,13 +19,16 @@ const Layout = ({ pageTitle, children }) => {
     return (
 <body className="bg-gray-800 text-white">
     <Header/>
-    <OneColumn/>
-    <div >{data.site.siteMetadata.title}</div>
-    {children}
-    <Link to="/category/">カテゴリーリンク</Link>
-    <Link to="/post/">投稿リンク</Link>
-    <Link to="/">トップ</Link>
-    <ThreeColumn/>
+    <div className="grid grid-cols-12 gap-0">
+        <OneColumn/>
+            <div className="bg-gray-400 col-span-6">{data.site.siteMetadata.title}
+            {children}
+                <Link to="/category/">カテゴリーリンク</Link>
+                <Link to="/post/">投稿リンク</Link>
+                <Link to="/">トップ</Link>
+            </div>
+        <ThreeColumn/>
+    </div>
     <Footer/>
 </body>
     )
