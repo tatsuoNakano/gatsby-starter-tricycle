@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Header from "./header";
+import Footer from "./Footer";
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -13,21 +15,15 @@ const Layout = ({ pageTitle, children }) => {
     `)
 
     return (
-        <div>
-            <header>{data.site.siteMetadata.title}</header>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/post">post</Link></li>
-                    <li><Link to="/category">category</Link></li>
-                    <li><Link to="/tags">tags</Link></li>
-                </ul>
-            </nav>
-            <main>
-                <h1>{pageTitle}</h1>
-                {children}
-            </main>
-        </div>
+<body className="bg-gray-800 text-white">
+    <Header/>
+    <div >{data.site.siteMetadata.title}</div>
+    {children}
+    <Link to="/category/">カテゴリーリンク</Link>
+    <Link to="/post/">投稿リンク</Link>
+    <Link to="/">トップ</Link>
+    <Footer/>
+</body>
     )
 }
 

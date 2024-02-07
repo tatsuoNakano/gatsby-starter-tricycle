@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Layout from "../component/layout/layout";
 
 const Categories = ({ pageContext, data }) => {
     const { category } = pageContext
@@ -7,6 +8,7 @@ const Categories = ({ pageContext, data }) => {
     const categoryHeader = `${category}カテゴリーで${totalCount}個の記事が見つかりました。`
 
     return (
+        <Layout>
         <div>
             <h1>{categoryHeader}</h1>
             <ul>
@@ -21,6 +23,7 @@ const Categories = ({ pageContext, data }) => {
                 })}
             </ul>
         </div>
+        </Layout>
     )
 }
 

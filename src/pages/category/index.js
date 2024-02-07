@@ -1,8 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Layout from '../../component/layout/layout'
 const CategoryList = ({ data }) => {
     const { categories } = data.allMdx
     return (
+        <Layout>
         <div>
             <h1>カテゴリ一覧</h1>
             <ul>
@@ -15,6 +17,7 @@ const CategoryList = ({ data }) => {
                 })}
             </ul>
         </div>
+        </Layout>
     )
 }
 export default CategoryList
