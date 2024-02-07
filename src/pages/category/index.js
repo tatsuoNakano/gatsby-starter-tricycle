@@ -21,7 +21,7 @@ export default CategoryList
 export const pageQuery = graphql`
     query{
         allMdx{
-            categories: group (field: frontmatter___category){
+            categories: group (field: {frontmatter: {category: SELECT}}){
                 fieldValue
             }
         }

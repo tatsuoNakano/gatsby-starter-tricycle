@@ -15,6 +15,7 @@ module.exports = {
     }
   },
     "gatsby-plugin-mdx",
+    'gatsby-plugin-postcss',
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
