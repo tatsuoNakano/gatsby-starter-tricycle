@@ -25,10 +25,11 @@ const Layout = ({ children }) => {
         <OneColumn/>
             <div className="bg-gray-400 col-span-6">{data.site.siteMetadata.title}
             {children}
-                <Link to="/category/">カテゴリーリンク</Link>
-                <Link to="/post/">投稿リンク</Link>
-                <Link to="/">トップ</Link>
-                <Link to="/tags/">タグ</Link>
+                <li><Link to="/category/">カテゴリーリンク</Link></li>
+                <li><Link to="/post/">投稿リンク</Link></li>
+                <li><Link to="/">トップ</Link></li>
+                <li><Link to="/tags/">タグ</Link></li>
+                <li><Link to="/404/404">404</Link></li>
             </div>
         <ThreeColumn/>
     </div>

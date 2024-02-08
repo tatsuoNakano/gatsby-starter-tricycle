@@ -3,32 +3,32 @@ const path = require("path")
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
 
-    const tagsTemplate = path.resolve("src/templates/tags.js")
+    const categoryTemplate = path.resolve("src/templates/category.js")
 
 
-    const outcome = await graphql(`
+    const result = await graphql(`
         {
             categoryGroup: allMdx {
-                group(field: {frontmatter: {tags: SELECT}}) {
+                group(field: {frontmatter: {category: SELECT}}) {
                     fieldValue
                 }
             }
         }
     `)
 
-    if (outcome.errors) {
+    if (result.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
 
-    const tagfamily = outcome.data.categoryGroup.group
+    const categories = result.data.categoryGroup.group
 
-    tagfamily.forEach(tags => {
+    categories.forEach(category => {
         createPage({
-            path: `/tags/${tags.fieldValue}/`,
-            component: tagsTemplate,
+            path: `/category/${category.fieldValue}/`,
+            component: categoryTemplate,
             context: {
-                category: tags.fieldValue,
+                category: category.fieldValue,
             },
         })
     })
