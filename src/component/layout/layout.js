@@ -21,9 +21,9 @@ const Layout = ({ children }) => {
     `)
 
     return (
-<body className="bg-gray-800 text-white">
+<body className="bg-gray-800 text-white m-0 p-0">
     <Header/>
-    <div className="grid grid-cols-12 gap-0">
+    <div className="grid grid-cols-12 gap-0 m-0 p-0">
         <OneColumn/>
             <div className="bg-gray-400 col-span-12  lg:col-span-9 xl:col-span-6">{data.site.siteMetadata.title}
             {children}

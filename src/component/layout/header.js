@@ -1,10 +1,11 @@
 import React from "react"
+import {Navbar} from "@material-tailwind/react";
+
 
 const Header = () => (
-    <header
-        className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 dark:bg-gray-800">
-
-    </header>
+<div >
+      <Navbar className='bg-gray-800 h-4'/>
+</div>
 )
 
 export default Header
