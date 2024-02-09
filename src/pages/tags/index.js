@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import Layout from '../../component/layout/layout'
 // Utilities
 
 
@@ -16,26 +16,28 @@ const TagsPage = ({
                           },
                       },
                   }) => (
+                      <Layout>
     <div>
 
         <div>
             <h1>Tags</h1>
             <ul>
-                {group.map(tag => (
-                    <li key={tag.fieldValue}>
-                        <Link to={`/fix/${(tag.fieldValue)}/`}>
-                            {tag.fieldValue} ({tag.totalCount})
+                {group.map(tags => (
+                    <li key={tags.fieldValue}>
+                        <Link to={`/tag/${(tags.fieldValue)}/`}>
+                            {tags.fieldValue} ({tags.totalCount})
                         </Link>
                     </li>
                 ))}
             </ul>
         </div>
     </div>
+                      </Layout>
 )
 
 TagsPage.propTypes = {
     data: PropTypes.shape({
-        allMarkdownRemark: PropTypes.shape({
+        allMds: PropTypes.shape({
             group: PropTypes.arrayOf(
                 PropTypes.shape({
                     fieldValue: PropTypes.string.isRequired,

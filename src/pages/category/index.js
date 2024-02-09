@@ -1,37 +1,74 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import PropTypes from "prop-types"
 import Layout from '../../component/layout/layout'
-import {Seo} from "../../component/function/seo";
-const CategoryList = ({ data }) => {
-    const { categories } = data.allMdx
+// Utilities
+
+
+// Components
+
+import { Link, graphql } from "gatsby"
+
+const CategoryPage = ({
+                      data: {
+                          allMdx: { group },
+                          site: {
+                              siteMetadata: { title },
+                          },
+                      },
+                  }) => {
     return (
         <Layout>
             <div>
-                <h1>カテゴリ一覧</h1>
-                <ul>
-                    {categories.map( category => {
-                        return (
+
+                <div>
+                    <h1>Tags</h1>
+                    <ul>
+                        {group.map(category => (
                             <li key={category.fieldValue}>
-                                <Link to={`/fix/${(category.fieldValue)}/`}>{category.fieldValue}</Link>
+                                <Link to={`/category/${(category.fieldValue)}/`}>
+                                    {category.fieldValue} ({category.totalCount})
+                                </Link>
                             </li>
-                        )
-                    })}
-                </ul>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </Layout>
-    )
+    );
 }
-export default CategoryList
+
+CategoryPage.propTypes = {
+    data: PropTypes.shape({
+        allMds: PropTypes.shape({
+            group: PropTypes.arrayOf(
+                PropTypes.shape({
+                    fieldValue: PropTypes.string.isRequired,
+                    totalCount: PropTypes.number.isRequired,
+                }).isRequired
+            ),
+        }),
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }),
+        }),
+    }),
+}
+
+export default CategoryPage
+
 export const pageQuery = graphql`
-    query{
-        allMdx{
-            categories: group (field: {frontmatter: {category: SELECT}}){
+    query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        allMdx(limit: 2000) {
+            group(field: { frontmatter: { category: SELECT }}) {
                 fieldValue
+                totalCount
             }
         }
     }
 `
-
-export const Head = () => (
-    <Seo />
-)
