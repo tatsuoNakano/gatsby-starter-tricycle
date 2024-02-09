@@ -3,12 +3,21 @@ const path = require("path")
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
 
-    const tagsTemplate = path.resolve("src/templates/tags.js")
+    const categoryTemplate = path.resolve("src/templates/category.js")
+    const tagTemplate = path.resolve("src/templates/category.js")
 
-
-    const outcome = await graphql(`
+    const result = await graphql(`
         {
             categoryGroup: allMdx {
+                group(field: {frontmatter: {category: SELECT}}) {
+                    fieldValue
+                }
+            }
+        }
+    `)
+    const outcome = await graphql(`
+        {
+            tagGroup: allMdx {
                 group(field: {frontmatter: {tags: SELECT}}) {
                     fieldValue
                 }
@@ -16,17 +25,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
     `)
 
+    if (result.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query.`)
+        return
+    }
     if (outcome.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
 
-    const tagfamily = outcome.data.categoryGroup.group
+    const categories = result.data.categoryGroup.group
+    const tagfamily = outcome.data.tagGroup.group
 
+    categories.forEach(category => {
+        createPage({
+            path: `/fix/${category.fieldValue}/`,
+            component: categoryTemplate,
+            context: {
+                category: category.fieldValue,
+            },
+        })
+    })
     tagfamily.forEach(tags => {
         createPage({
-            path: `/tags/${tags.fieldValue}/`,
-            component: tagsTemplate,
+            path: `/fix/${tags.fieldValue}/`,
+            component: tagTemplate,
             context: {
                 category: tags.fieldValue,
             },

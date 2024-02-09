@@ -1,37 +1,70 @@
 import React from "react"
+import PropTypes from "prop-types"
+
+// Utilities
+
+
+// Components
+
 import { Link, graphql } from "gatsby"
-import Layout from '../../component/layout/layout'
-import {Seo} from "../../component/function/seo";
-const TagsList = ({ data }) => {
-    const { tagfamily } = data.allMdx
-    return (
-        <Layout>
-            <div>
-                <h1>カテゴリ一覧</h1>
-                <ul>
-                    {tagfamily.map( tags => {
-                        return (
-                            <li key={tags.fieldValue}>
-                                <Link to={tags.fieldValue}>{tags.fieldValue}</Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-        </Layout>
-    )
+
+const TagsPage = ({
+                      data: {
+                          allMdx: { group },
+                          site: {
+                              siteMetadata: { title },
+                          },
+                      },
+                  }) => (
+    <div>
+
+        <div>
+            <h1>Tags</h1>
+            <ul>
+                {group.map(tag => (
+                    <li key={tag.fieldValue}>
+                        <Link to={`/fix/${(tag.fieldValue)}/`}>
+                            {tag.fieldValue} ({tag.totalCount})
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+)
+
+TagsPage.propTypes = {
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            group: PropTypes.arrayOf(
+                PropTypes.shape({
+                    fieldValue: PropTypes.string.isRequired,
+                    totalCount: PropTypes.number.isRequired,
+                }).isRequired
+            ),
+        }),
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }),
+        }),
+    }),
 }
-export default TagsList
+
+export default TagsPage
+
 export const pageQuery = graphql`
-    query{
-        allMdx{
-            tagfamily: group (field: {frontmatter: {tags: SELECT}}){
+    query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        allMdx(limit: 2000) {
+            group(field: { frontmatter: { tags: SELECT }}) {
                 fieldValue
+                totalCount
             }
         }
     }
 `
-
-export const Head = () => (
-    <Seo />
-)

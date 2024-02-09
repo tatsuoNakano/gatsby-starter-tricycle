@@ -3,9 +3,16 @@ import { Link, graphql } from "gatsby"
 import Layout from "../component/layout/layout";
 
 const Categories = ({ pageContext, data }) => {
-    const { category } = pageContext
+    let { category } = pageContext
+    let { tags } = pageContext
+    if (typeof category === 'undefined') {
+        category = "タグ";
+    }
+    if (typeof tags === 'undefined') {
+        tags = "カテゴリー";
+    }
     const { edges, totalCount } = data.allMdx
-    const categoryHeader = `${category}カテゴリーで${totalCount}個の記事が見つかりました。`
+    const categoryHeader = `${tags}${category}で${totalCount}個の記事が見つかりました。`
 
     return (
         <Layout>
@@ -30,11 +37,10 @@ const Categories = ({ pageContext, data }) => {
 export default Categories
 
 export const pageQuery = graphql`
-    query($category: String) {
+    query {
         allMdx(
             limit: 2000
             sort: { frontmatter: {date: DESC}}
-            filter: { frontmatter: { category: { in: [$category] } } }
         ) {
             totalCount
             edges {

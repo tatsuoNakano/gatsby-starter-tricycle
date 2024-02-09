@@ -12,7 +12,7 @@ const CategoryList = ({ data }) => {
                     {categories.map( category => {
                         return (
                             <li key={category.fieldValue}>
-                                <Link to={category.fieldValue}>{category.fieldValue}</Link>
+                                <Link to={`/fix/${(category.fieldValue)}/`}>{category.fieldValue}</Link>
                             </li>
                         )
                     })}
