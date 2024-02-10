@@ -8,7 +8,8 @@ slug: test
 title: test
 description: ""
 thumbnail: 1405951.jpg
-correction: ""
+publication: "2024-02-10"
+update: "2024-02-11"
 writer: ""
 writerface: ""
 writerlink: ""
@@ -22,6 +23,8 @@ import HeadlineInfo from "../../src/component/layout/headline-info";
 <HeadlineInfo
     tags={props.pageContext.frontmatter.tags}
     title={props.pageContext.frontmatter.title}
+    publication={props.pageContext.frontmatter.publication}
+    update={props.pageContext.frontmatter.update}
 />
 
 export const Head = () => (

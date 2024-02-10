@@ -3,7 +3,7 @@ import { Button } from "@material-tailwind/react";
 
 
 const OneColumn = () => (
-    <div className="padding bg-gray-600 text-white hidden lg:block lg:col-span-3 xl:col-span-3">
+        <div className="padding bg-gray-600 text-white hidden lg:block lg:col-span-3 xl:col-span-3">
         <Button>Button</Button>
         <div className="flex flex-wrap">
 

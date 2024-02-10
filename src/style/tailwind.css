@@ -8,8 +8,11 @@
     .padding {
         @apply p-2.5;
     }
+    .padding-b {
+        @apply pb-2.5;
+    }
     .primary-coler {
-        @apply bg-purple-900;
+        @apply bg-gray-50;
     }
     .secondary-coler {
         @apply p-2.5;
