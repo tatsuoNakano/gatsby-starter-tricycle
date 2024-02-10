@@ -7,7 +7,7 @@ date: "2021-07-24"
 slug: test
 title: test
 description: ""
-thumbnail: ""
+thumbnail: 1405951.jpg
 correction: ""
 writer: ""
 writerface: ""
@@ -17,10 +17,12 @@ no: 1
 ---
 
 import {Seo} from "../../src/component/function/seo";
+import HeadlineInfo from "../../src/component/layout/headline-info";
 
-
-# ダミー
-<h1>{props.pageContext.frontmatter.tags}</h1>
+<HeadlineInfo
+    tags={props.pageContext.frontmatter.tags}
+    title={props.pageContext.frontmatter.title}
+/>
 
 export const Head = () => (
     <Seo />

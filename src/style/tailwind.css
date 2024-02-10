@@ -1,3 +1,26 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .padding {
+        @apply p-2.5;
+    }
+    .primary-coler {
+        @apply bg-purple-900;
+    }
+    .secondary-coler {
+        @apply p-2.5;
+    }
+    .tertiary-coler {
+        @apply p-2.5;
+    }
+    .quaternary-coler {
+        @apply p-2.5;
+    }
+    .quinary-coler {
+        @apply p-2.5;
+    }
+}

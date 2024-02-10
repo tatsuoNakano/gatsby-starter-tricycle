@@ -4,6 +4,7 @@ import Header from "./header";
 import Footer from "./Footer";
 import OneColumn from "./one-column";
 import ThreeColumn from "./three-column";
+import HeroImg from "./hero-img";
 
 
 
@@ -21,11 +22,15 @@ const Layout = ({ children }) => {
     `)
 
     return (
-<body className="bg-gray-800 text-white m-0 p-0">
+<body >
+
     <Header/>
+    <HeroImg/>
     <div className="grid grid-cols-12 gap-0 m-0 p-0">
+
         <OneColumn/>
-            <div className="bg-gray-400 col-span-12  lg:col-span-9 xl:col-span-6">{data.site.siteMetadata.title}
+            <div className="padding bg-gray-400 col-span-12  lg:col-span-9 xl:col-span-6">
+
             {children}
                 <li><Link to="/category/">カテゴリーリンク</Link></li>
                 <li><Link to="/post/">投稿リンク</Link></li>

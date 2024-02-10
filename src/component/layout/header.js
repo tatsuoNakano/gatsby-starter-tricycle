@@ -4,7 +4,8 @@ import {Navbar} from "@material-tailwind/react";
 
 const Header = () => (
 <div >
-      <Navbar className='bg-gray-800 h-4'/>
+      <Navbar  position="fixed" className='lg:hidden bg-black h-4 fixed'>
+      </Navbar>
 </div>
 )
 
