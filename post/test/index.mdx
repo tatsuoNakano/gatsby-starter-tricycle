@@ -1,7 +1,7 @@
 ---
 number: "3"
 pagetype: post
-category: かてえゴリ
+category: "かてえゴリ"
 tags: ["javascript", "gatsby", "react"]
 date: "2021-07-24"
 slug: test
@@ -24,6 +24,7 @@ import HeadlineInfo from "../../src/component/layout/headline-info";
     tags={props.pageContext.frontmatter.tags}
     title={props.pageContext.frontmatter.title}
     publication={props.pageContext.frontmatter.publication}
+    category={props.pageContext.frontmatter.category}
     update={props.pageContext.frontmatter.update}
 />
 
