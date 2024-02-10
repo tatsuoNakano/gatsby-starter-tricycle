@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import Header from "./header";
 import Footer from "./Footer";
 import OneColumn from "./one-column";
@@ -11,15 +11,6 @@ import HeroImg from "./hero-img";
 
 
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `)
 
     return (
 <body >
