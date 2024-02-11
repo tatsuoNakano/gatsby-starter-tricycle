@@ -7,7 +7,7 @@ date: "2021-07-24"
 slug: test
 title: test
 description: ""
-thumbnail: 1405951.jpg
+thumbnail: "1405951.jpg"
 publication: "2024-02-10"
 update: "2024-02-11"
 writer: ""
@@ -17,17 +17,3 @@ xaccout: ""
 no: 1
 ---
 
-import {Seo} from "../../src/component/function/seo";
-import HeadlineInfo from "../../src/component/layout/headline-info";
-
-<HeadlineInfo
-    tags={props.pageContext.frontmatter.tags}
-    title={props.pageContext.frontmatter.title}
-    publication={props.pageContext.frontmatter.publication}
-    category={props.pageContext.frontmatter.category}
-    update={props.pageContext.frontmatter.update}
-/>
-
-export const Head = () => (
-    <Seo />
-)
