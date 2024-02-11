@@ -1,8 +1,8 @@
 import React from "react"
 import {Navbar,
-      MobileNav,
       Typography,
       IconButton,
+    Collapse,
 } from "@material-tailwind/react";
 
 export function StickyNavbar() {
@@ -114,11 +114,11 @@ export function StickyNavbar() {
                             </IconButton>
                       </div>
                 </div>
-                <MobileNav open={openNav}>
+                <Collapse open={openNav}>
                       {navList}
                       <div className="flex items-center gap-x-1">
                       </div>
-                </MobileNav>
+                </Collapse>
           </Navbar>
       );
 }

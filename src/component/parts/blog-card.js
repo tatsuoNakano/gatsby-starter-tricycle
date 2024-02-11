@@ -8,7 +8,7 @@ import {
     Avatar,
     Tooltip,
 } from "@material-tailwind/react";
-import {StaticImage} from "gatsby-plugin-image";
+
 
 
 
@@ -27,7 +27,6 @@ export function BlogCard(props,data) {
 
             </CardHeader>
             <CardBody>
-            <StaticImage src={`${props.thumbnail}`}/>
                 <Typography variant="h4" color="blue-gray">
                     {props.title}
                 </Typography>
@@ -65,17 +64,5 @@ export function BlogCard(props,data) {
     );
 }
 
-export const query = graphql`
-    query ($id: String) {
-        mdx(id: {eq: $id}) {
-            frontmatter {
-                thumbnail {
-                    childrenImageSharp {
-                        gatsbyImageData
-                    }
-                }
-            }
-        }
-    }
-`
+
 
