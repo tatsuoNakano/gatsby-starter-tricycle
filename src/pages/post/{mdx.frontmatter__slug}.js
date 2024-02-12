@@ -8,6 +8,8 @@ import BottomlineInfo from "../../component/layout/bottomline-info";
 
 const Post = ({ data, children }) => {
     const image = getImage(data.mdx.frontmatter.thumbnail)
+    let faceimg = getImage(data.mdx.frontmatter.writer_face)
+
 
 
     return (
@@ -28,6 +30,9 @@ const Post = ({ data, children }) => {
             <BottomlineInfo
                 tags={data.mdx.frontmatter.tags}
                 category={data.mdx.frontmatter.category}
+                writer={data.mdx.frontmatter.writer}
+                writerface={faceimg}
+                writerlink={data.mdx.frontmatter.writer_link}
             />
         </Layout>
     )

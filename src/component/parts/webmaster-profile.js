@@ -5,7 +5,7 @@ import {StaticImage} from "gatsby-plugin-image";
 const WebmasterProfile = () => (
     <div className="m-2.5 primary-coler prime text-sm padding">
 <div className="padding-b text-center font-bold">Gatsby-starter-tricycle Creator</div>
-       <div className="text-center">Tatsuo Nakano</div>
+       <div className="text-center padding-b">Tatsuo Nakano</div>
             <div className="flex justify-center">
         <StaticImage className="w-2/3 shadow-2xl mb-2.5 rounded-full"  src="../../images/parts/monster01.png" alt="webmaster" />
             </div>

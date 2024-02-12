@@ -10,7 +10,7 @@ const BottomlineInfo = (props) => (
 
     <div className="text-base">
         <div className="padding mb-2.5 mt-2.5  bg-gray-200">
-            <WriterProfile/>
+            <WriterProfile writer={props.writer} writerface={props.writerface} writerlink={props.writerlink}/>
         </div>
         <div className="bg-white padding">
             <BreadCrumbs category={props.category}/>
