@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 
+
+
 @layer components {
     .padding {
         @apply p-2.5;
@@ -12,10 +14,10 @@
         @apply pb-2.5;
     }
     .primary-coler {
-        @apply bg-gray-50;
+        @apply bg-white;
     }
     .secondary-coler {
-        @apply p-2.5;
+        @apply bg-gray-100;
     }
     .tertiary-coler {
         @apply p-2.5;
@@ -25,5 +27,8 @@
     }
     .quinary-coler {
         @apply p-2.5;
+    }
+    .img-w {
+        @apply w-3/4;
     }
 }

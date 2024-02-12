@@ -1,7 +1,10 @@
 import React from "react"
+import WebmasterProfile from "../parts/webmaster-profile";
 
 const ThreeColumn = () => (
-    <div className="padding bg-gray-500 text-white hidden xl:block lg:col-span-3">第3カラム</div>
+    <div className=" ml-2.5 mr-2.5 secondary-coler  hidden xl:block lg:col-span-3">
+        <WebmasterProfile/>
+    </div>
 )
 
 export default ThreeColumn

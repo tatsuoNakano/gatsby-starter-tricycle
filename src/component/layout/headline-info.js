@@ -4,20 +4,32 @@ import HeadlineTitle from "../parts/headline-title";
 import Publication from "../parts/publication";
 import UpdateDay from "../parts/update-day";
 import BreadCrumbs from "../parts/breadcrumbs";
-import {BlogCard} from "../parts/blog-card";
-
+import Thumbnail from "../parts/thumbnail";
 
 const HeadlineInfo = (props) => (
 
 
-    <div >
-        <BreadCrumbs category={props.category}/>
+    <div　className="mb-2.5">
+        <div className="padding mb-2.5 bg-white">
+            <BreadCrumbs category={props.category}/>
+        </div>
         <HeadlineTitle title={props.title}/>
-        <BlogCard slug={props.slug} title={props.title} description={props.description} thumbnail={props.thumbnail}/>
-        <Publication Publication={props.publication}/>
-        <UpdateDay update={props.update}/>
-        <TagCloud tags={props.tags}/>
-    </div>
-)
+        <Thumbnail
+            thumbnail={props.thumbnail}
+            alt={props.alt}
+            credit={props.credit}
+            imgdescription={props.imgdescription}
+            link={props.link}
+        />
+        <div className="padding bg-gray-200">
+            <Publication Publication={props.publication}/>
+            <UpdateDay update={props.update}/>
+        </div>
+        <div className="mt-2.5 padding bg-white">
+            <TagCloud tags={props.tags}/>
+        </div>
 
-export default HeadlineInfo
+        </div>
+        )
+
+        export default HeadlineInfo

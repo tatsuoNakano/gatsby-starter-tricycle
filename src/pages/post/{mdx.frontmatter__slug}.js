@@ -3,7 +3,8 @@ import { graphql } from 'gatsby'
 import Layout from '../../component/layout/layout'
 import { Seo } from "../../component/function/seo"
 import HeadlineInfo from "../../component/layout/headline-info";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {  getImage } from 'gatsby-plugin-image'
+import BottomlineInfo from "../../component/layout/bottomline-info";
 
 const Post = ({ data, children }) => {
     const image = getImage(data.mdx.frontmatter.thumbnail)
@@ -17,12 +18,17 @@ const Post = ({ data, children }) => {
                 publication={data.mdx.frontmatter.publication}
                 category={data.mdx.frontmatter.category}
                 update={data.mdx.frontmatter.update}
-            />
-            <GatsbyImage
-                image={image}
-                alt={data.mdx.frontmatter.thumbnail}
+                thumbnail={image}
+                alt={data.mdx.frontmatter.thumbnail_alt}
+                credit={data.mdx.frontmatter.thumbnail_credit_text}
+                imgdescription={data.mdx.frontmatter.thumbnail_description}
+                link={data.mdx.frontmatter.thumbnail_credit_link}
             />
             {children}
+            <BottomlineInfo
+                tags={data.mdx.frontmatter.tags}
+                category={data.mdx.frontmatter.category}
+            />
         </Layout>
     )
 }
@@ -42,9 +48,17 @@ export const query = graphql`
                 tags
                 update
                 writer
-                writerface
-                writerlink
+                writer_link
                 xaccout
+                thumbnail_alt
+                thumbnail_description
+                thumbnail_credit_text
+                thumbnail_credit_link
+                writer_face{
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
                 thumbnail{
                     childImageSharp {
                         gatsbyImageData
