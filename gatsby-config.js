@@ -32,6 +32,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-minify`,
     'gatsby-plugin-postcss',
     "gatsby-plugin-sharp",
     {
