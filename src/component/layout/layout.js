@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Footer from "./Footer";
+import Footer from "./footer";
 import OneColumn from "./one-column";
 import ThreeColumn from "./three-column";
 import HeroImg from "./hero-img";
