@@ -6,6 +6,7 @@ import { Seo } from "../../component/function/seo"
 const PostPage = ({ data }) => {
     return (
         <Layout pageTitle="My  Posts">
+            <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500" >List of articles</h1>
             {
                 data.allMdx.nodes.map(node => (
                     <article key={node.id}>

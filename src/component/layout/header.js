@@ -4,6 +4,7 @@ import {Navbar,
       IconButton,
     Collapse,
 } from "@material-tailwind/react";
+import {Link} from "gatsby";
 
 export function StickyNavbar() {
       const [openNav, setOpenNav] = React.useState(false);
@@ -17,54 +18,19 @@ export function StickyNavbar() {
 
       const navList = (
           <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                <Typography
-                    as="li"
-                    variant="small"
-                    color="white"
-                    className="p-1 font-normal"
-                >
-                      <p className="flex items-center">
-                            Pages
-                      </p>
-                </Typography>
-                <Typography
-                    as="li"
-                    variant="small"
-                    color="white"
-                    className="p-1 font-normal"
-                >
-                      <p className="flex items-center">
-                            Account
-                      </p>
-                </Typography>
-                <Typography
-                    as="li"
-                    variant="small"
-                    color="white"
-                    className="p-1 font-normal"
-                >
-                      <p className="flex items-center">
-                            Blocks
-                      </p>
-                </Typography>
-                <Typography
-                    as="li"
-                    variant="small"
-                    color="white"
-                    className="p-1 font-normal"
-                >
-                      <p className="flex items-center">
-                            Docs
-                      </p>
-                </Typography>
+              <li><Link className="text-gray-50" to="/category/">Category</Link></li>
+              <li><Link className="text-gray-50" to="/post/">Post</Link></li>
+              <li><Link className="text-gray-50" to="/">Top</Link></li>
+              <li><Link className="text-gray-50" to="/tags/">Tags</Link></li>
           </ul>
       );
 
-      return (
-          <Navbar className="lg:hidden  bg-black fixed top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
-                <div className="flex items-center justify-between text-blue-gray-900">
-                      <Typography
-                          as="a"
+    return (
+        <Navbar
+            className="lg:hidden  bg-black fixed top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+            <div className="flex items-center justify-between text-blue-gray-900">
+                <Typography
+                    as="a"
                           href="#"
                           color="white"
                           className="mr-4 cursor-pointer py-1.5 font-medium"

@@ -17,22 +17,22 @@ const TagsPage = ({
                       },
                   }) => (
                       <Layout>
-    <div>
-            <h1>Tags</h1>
-                {group.map(tags => (
+                        <div>
+                        <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500">All Tags</h1>
+                            {group.map(tags => (
 
-                    <span
-                        key={tags.fieldValue}
-                        className="mb-2.5 mt-2.5 inline-block bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-xs font-bold mr-2  relative"
-                    >
+                            <span
+                            key={tags.fieldValue}
+                            className="mb-2.5 mt-2.5 inline-block bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-xs font-bold mr-2  relative"
+                            >
                         <Link className="text-sm font-bold" to={`/tag/${(tags.fieldValue)}/`}>
                             {tags.fieldValue} ({tags.totalCount})
                         </Link>
-                        <span className="absolute right-0 top-0 bottom-0 bg-gray-300 w-4"></span>
-                    <span className="absolute right-0 top-0 bottom-0 bg-gray-400 w-3"></span>
-                </span>
+                                <span className="absolute right-0 top-0 bottom-0 bg-gray-300 w-4"></span>
+                            <span className="absolute right-0 top-0 bottom-0 bg-gray-400 w-3"></span>
+                        </span>
                     ))}
-    </div>
+                        </div>
                       </Layout>
 )
 

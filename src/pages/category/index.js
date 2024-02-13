@@ -1,7 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Layout from '../../component/layout/layout'
-// Utilities
+import {
+    List,
+    ListItem,
+    ListItemSuffix,
+    Chip,
+} from "@material-tailwind/react";
 
 
 // Components
@@ -21,16 +26,23 @@ const CategoryPage = ({
             <div>
 
                 <div>
-                    <h1>Category</h1>
-                    <ul>
+                    <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500">All Category</h1>
+                    <List>
                         {group.map(category => (
-                            <li key={category.fieldValue}>
-                                <Link to={`/category/${(category.fieldValue)}/`}>
-                                    {category.fieldValue} ({category.totalCount})
-                                </Link>
-                            </li>
+                            <Link to={`/category/${(category.fieldValue)}/`}>
+                            <ListItem className="border-gray-200" key={category.fieldValue}>{category.fieldValue}
+                                      <ListItemSuffix>
+                                          <Chip
+                                            value={category.totalCount}
+                                            variant="ghost"
+                                            size="xl"
+                                            className="rounded-full"
+                                            />
+                                      </ListItemSuffix>
+                            </ListItem>
+                            </Link>
                         ))}
-                    </ul>
+                    </List>
                 </div>
             </div>
         </Layout>

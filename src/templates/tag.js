@@ -7,12 +7,13 @@ import Layout from "../component/layout/layout";
 const Tagfamily = ({ pageContext, data }) => {
     const { tags } = pageContext
     const { edges, totalCount } = data.allMdx
-    const tagsHeader = `${tags}タグで${totalCount}個の記事が見つかりました。`
+    // const tagsHeader = `${tags}タグで${totalCount}個の記事が見つかりました。`
+    const tagsHeader = `${totalCount} articles found in ${tags} taglist`
 
     return (
         <Layout>
         <div>
-            <h1>{tagsHeader}</h1>
+            <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500">{tagsHeader}</h1>
             <ul>
                 {edges.map(({ node }) => {
                     const { slug } = node.frontmatter

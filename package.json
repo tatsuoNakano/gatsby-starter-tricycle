@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.9",
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.13.2",

@@ -5,13 +5,13 @@ import Layout from "../component/layout/layout";
 const Categories = ({ pageContext, data }) => {
     const { category } = pageContext
     const { edges, totalCount } = data.allMdx
-    const categoryHeader = `${category}カテゴリーで${totalCount}個の記事が見つかりました。`
+    const categoryHeader = `${totalCount} articles found in ${category} category`
 
     return (
         <Layout>
 
         <div>
-            <h1>{categoryHeader}</h1>
+            <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500">{categoryHeader}</h1>
             <ul>
                 {edges.map(({node}) => {
                     const {slug} = node.frontmatter
