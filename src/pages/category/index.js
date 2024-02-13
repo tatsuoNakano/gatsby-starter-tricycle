@@ -21,7 +21,7 @@ const CategoryPage = ({
             <div>
 
                 <div>
-                    <h1>Tags</h1>
+                    <h1>Category</h1>
                     <ul>
                         {group.map(category => (
                             <li key={category.fieldValue}>

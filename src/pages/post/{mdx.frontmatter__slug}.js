@@ -54,7 +54,6 @@ export const query = graphql`
                 update
                 writer
                 writer_link
-                xaccout
                 thumbnail_alt
                 thumbnail_description
                 thumbnail_credit_text

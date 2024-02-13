@@ -44,5 +44,18 @@ p {
     padding: 0.625rem
 }
 
+a {
+    color:  #2563EB;
+}
+
+a:active{
+    color : #26a69a;
+}
+
+
+a:hover{
+    color : #ff7043;
+}
+
 
 
