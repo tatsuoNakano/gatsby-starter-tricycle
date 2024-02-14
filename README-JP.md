@@ -84,13 +84,13 @@
 
 # ディレクトリ構成 
 
-/post/  書いたMDX記事を置くところ
+/post/   書いたMDX記事を置くところ
 
-/src/ ソースコード　ココを主に編集する
+/src/   ソースコード　ココを主に編集する
 
-/public/ gatsby buildした時にココにビルドされたコードが出力される　サイトを公開するときはこの中身を公開する
+/public/  gatsby buildした時にココにビルドされたコードが出力される　サイトを公開するときはこの中身を公開する
 
-/gatsby-config.js  gatsbyのプラグインをいらた時にはここに書き込むことでプラグインを動作せることができる
+/gatsby-config.js  gatsbyのプラグインを入れた時にはここに書き込むことでプラグインを動作せることができる
 
 
 ## /src/ディレクトリの説明
@@ -103,9 +103,9 @@
 
 /static/ faviconやwebpackで処理されたくない物を置く場所
 
-/tamplate/ Gatsbyにとって特別なディレクトリ　gatsby-node.jsで動的に作成されたページを受け取ってこのディレクトリのファイルの指示に従ってページが出力される。
+/tamplate/ 　Gatsbyにとって特別なディレクトリ　gatsby-node.jsで動的に作成されたページを受け取ってこのディレクトリのファイルの指示に従ってページが出力される。
 
-/style/ CSSやTailwindcss関連　tailwindcssをglobal.cssで上書きしているので、global.cssに普通のcssを書くと適応される。正し、tailwindcss的には良い行いではないのであまり多用しない方が良いと思う　tailwindcssでスタイリングすることを勧める
+/style/ 　CSSやTailwindcss関連　tailwindcssをglobal.cssで上書きしているので、global.cssに普通のcssを書くと適応される。正し、tailwindcss的には良い行いではないのであまり多用しない方が良いと思う　tailwindcssでスタイリングすることを勧める
 
 
 ---
