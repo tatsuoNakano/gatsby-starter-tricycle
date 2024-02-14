@@ -8,7 +8,18 @@ const IndexPage = () => {
   return (
       <main>
           <Layout pageTitle="Home Page">
-              <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500" >Thank you for installing Gatsby-starter-tricycle!</h1>
+              <h1 className="mb-2 padding-b text-xl font-semibold text-gray-900 bg-gradient-to-br from-gray-200 to-gray-300 p-4 shadow-md border-l-4 border-blue-500">Thank
+                  you for installing Gatsby-starter-tricycle!</h1>
+              <ol>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              </ol>
+              <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+              </ul>
           </Layout>
       </main>
   )
