@@ -11,7 +11,7 @@
 
 
 
-# 使用している主な技術 {#使用している主な技術}
+# 使用している主な技術 
 
 
 
@@ -60,7 +60,7 @@
 ---
 
 
-# プロジェクトの概要 {#プロジェクトの概要}
+# プロジェクトの概要 
 
 
 ---
@@ -68,7 +68,7 @@
 
 # Gatsbyコマンド一覧
 
-"develop": "gatsby develop",　開発用のサーバーを立てる
+    "develop": "gatsby develop",　開発用のサーバーを立てる
 
     "start": "gatsby develop",　開発用のサーバーを立てる
 
@@ -82,7 +82,7 @@
 ---
 
 
-# ディレクトリ構成 {#ディレクトリ構成}
+# ディレクトリ構成 
 
 /post/  書いたMDX記事を置くところ
 
@@ -111,7 +111,7 @@
 ---
 
 
-# 開発環境の構築方法 {#開発環境の構築方法}
+# 開発環境の構築方法 
 
 [Gastby Tutorials](https://www.gatsbyjs.com/docs/tutorial/)
 
@@ -119,7 +119,7 @@
 ---
 
 
-# トラブルシューティング {#トラブルシューティング}
+# トラブルシューティング
 
 [https://github.com/tatsuoNakano/gatsby-starter-tricycle](https://github.com/tatsuoNakano/gatsby-starter-tricycle)
 
@@ -127,4 +127,4 @@
 ---
 
 
-# 参考記事 {#参考記事}
+# 参考記事 
