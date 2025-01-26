@@ -136,5 +136,7 @@ Gatsby-starter-tricycle is a tool that allows both beginners and experienced dev
 [https://github.com/tatsuoNakano/gatsby-starter-tricycle](https://github.com/tatsuoNakano/gatsby-starter-tricycle)
 Please contact me here
 
+If the page does not display well, the cache may be at fault, so try using the gatsby clean command.
+
 
 
